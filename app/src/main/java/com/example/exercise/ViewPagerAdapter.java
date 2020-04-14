@@ -1,0 +1,26 @@
+package com.example.exercise;
+
+import androidx.annotation.NonNull;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentStatePagerAdapter;
+
+public class ViewPagerAdapter extends FragmentStatePagerAdapter {
+String array[];
+
+    public ViewPagerAdapter(@NonNull FragmentManager fm,String a[]) {
+        super(fm);
+        array=a;
+    }
+
+    @NonNull
+    @Override
+    public Fragment getItem(int position) {
+        return new ViewPagerFragment(array[position]);
+    }
+
+    @Override
+    public int getCount() {
+        return array.length;
+    }
+}
